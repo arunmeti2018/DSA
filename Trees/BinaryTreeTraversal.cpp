@@ -2,6 +2,7 @@
 #include <queue>
 
 using namespace std;
+
 class node
 {
 public:
@@ -15,7 +16,7 @@ public:
         right = NULL;
     }
 };
-
+// build binary tree by recursion
 node *binaryTree(node *root)
 {
 
@@ -34,6 +35,8 @@ node *binaryTree(node *root)
     root->right = binaryTree(root->right);
     return root;
 }
+
+// building binARY Tree through iteration 
 void buildTreeIteration(node *&root)
 {
     int data;
@@ -65,6 +68,8 @@ void buildTreeIteration(node *&root)
         }
     }
 }
+
+// level order traversal  accesing elements level by level
 void levelOrderTraversal(node *root)
 {
     queue<node *> q;
@@ -94,7 +99,7 @@ void levelOrderTraversal(node *root)
         }
     }
 }
-
+// in order traversal "LNR "    left ->print node-> right
 void inOrderTraversal(node *root)
 {
     if (root == NULL)
@@ -103,6 +108,8 @@ void inOrderTraversal(node *root)
     cout << root->data << " ";
     inOrderTraversal(root->right);
 }
+
+// preorder traversal  " NLR"  print node->Left->right
 void preOrderTraversal(node *root)
 {
     if (root == NULL)
@@ -111,6 +118,8 @@ void preOrderTraversal(node *root)
     preOrderTraversal(root->left);
     preOrderTraversal(root->right);
 }
+
+// postorder traversal  " LRN"       Left->right-> print node
 void postOrderTraversal(node *root)
 {
     if (root == NULL)
